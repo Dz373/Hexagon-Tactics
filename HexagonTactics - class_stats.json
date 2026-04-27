@@ -1,0 +1,76 @@
+{
+  "test": {
+	"class_name": "test",
+	"hp": 5,
+	"atk": 1,
+	"def": 0,
+	"mv": 3,
+	"min_range": 1,
+	"max_range": 3,
+	"skills": []
+  },
+  "warrior": {
+	"class_name": "Warrior",
+	"hp": 8,
+	"atk": 6,
+	"def": 3,
+	"mv": 4,
+	"min_range": 1,
+	"max_range": 1,
+	"skills": []
+  },
+  "archer": {
+	"class_name": "Archer",
+	"hp": 5,
+	"atk": 5,
+	"def": 2,
+	"mv": 4,
+	"min_range": 2,
+	"max_range": 3,
+	"skills": []
+  },
+  "knight": {
+	"class_name": "Knight",
+	"hp": 8,
+	"atk": 5,
+	"def": 3,
+	"mv": 6,
+	"min_range": 1,
+	"max_range": 1,
+	"skills": []
+  },
+  "tank": {
+	"class_name": "Tank",
+	"hp": 10,
+	"atk": 4,
+	"def": 4,
+	"mv": 3,
+	"min_range": 1,
+	"max_range": 1,
+	"skills": []
+  },
+  "mage": {
+	"class_name": "Mage",
+	"hp": 5,
+	"atk": 5,
+	"def": 1,
+	"mv": 4,
+	"min_range": 1,
+	"max_range": 2,
+	"skills": [
+	  "ignore_armor"
+	]
+  },
+  "rogue": {
+	"class_name": "Rogue",
+	"hp": 6,
+	"atk": 5,
+	"def": 2,
+	"mv": 5,
+	"min_range": 1,
+	"max_range": 1,
+	"skills": [
+	  "ignore_terrain"
+	]
+  }
+}

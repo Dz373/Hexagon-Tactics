@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=6 format=3 uid="uid://dro2sqqmrr8ds"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit_resource.gd" id="1_cmubu"]
+[ext_resource type="Texture2D" uid="uid://dwgws4n61jrd0" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Ranged/RedRanged/MageRed.png" id="2_bxrvf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txu30"]
+atlas = ExtResource("2_bxrvf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bc6c"]
+atlas = ExtResource("2_bxrvf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aho5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txu30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bc6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("1_cmubu")
+id = "mage"
+texture = SubResource("SpriteFrames_aho5w")

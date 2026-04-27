@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://d05mjkbsuhdtx"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/unit_menu.gd" id="1_327p6"]
+[ext_resource type="Texture2D" uid="uid://xjkai5vjvnqj" path="res://Assets/Sprites/UI/UI.png" id="2_6hps8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boh5d"]
+atlas = ExtResource("2_6hps8")
+region = Rect2(417, 17, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seo0e"]
+atlas = ExtResource("2_6hps8")
+region = Rect2(416, 64, 48, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tddoq"]
+content_margin_left = 24.0
+content_margin_top = 7.0
+texture = SubResource("AtlasTexture_seo0e")
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[node name="UnitMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_327p6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("AtlasTexture_boh5d")
+
+[node name="Class" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 268.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 32
+text = "Class: "
+
+[node name="Stats" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 168.0
+offset_bottom = 232.0
+
+[node name="Hp" type="Label" parent="Stats"]
+layout_mode = 0
+offset_right = 113.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 32
+text = "HP: 0"
+
+[node name="Atk" type="Label" parent="Stats"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 32
+text = "Attack: 0"
+
+[node name="Def" type="Label" parent="Stats"]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 220.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 32
+text = "Defence: 0"
+
+[node name="Mv" type="Label" parent="Stats"]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 148.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 32
+text = "Move: 0"
+
+[node name="AtkRange" type="Label" parent="Stats"]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 172.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 32
+text = "Range: 0"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 780.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 32
+text = "Skills"
+
+[node name="Skill" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 184.0
+offset_right = 924.0
+offset_bottom = 344.0
+theme_override_constants/separation = 32
+
+[node name="Skill1" type="Label" parent="Skill"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_tddoq")
+horizontal_alignment = 1
+
+[node name="Skill2" type="Label" parent="Skill"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_tddoq")
+
+[node name="Skill3" type="Label" parent="Skill"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_tddoq")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 640.0
+offset_top = 448.0
+offset_right = 940.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 32
+text = "Inventory: WIP"

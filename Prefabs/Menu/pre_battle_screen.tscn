@@ -1,0 +1,201 @@
+[gd_scene load_steps=16 format=3 uid="uid://b0l4lbg0q8f30"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/pre_battle_screen.gd" id="1_vh55r"]
+[ext_resource type="Texture2D" uid="uid://kxi12q11e0tl" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Melee/SpearmanTemplate.png" id="2_0687w"]
+[ext_resource type="Texture2D" uid="uid://dpwckkh35emdg" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Ranged/BowmanTemplate.png" id="3_ft1b1"]
+[ext_resource type="Script" path="res://Scripts/Menu/select_button.gd" id="3_hd7rq"]
+[ext_resource type="Texture2D" uid="uid://bmhfnwlqk5v2e" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Mounted/CyanKnight.png" id="4_fkm4h"]
+[ext_resource type="Texture2D" uid="uid://xkiadjoq3sh7" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Melee/AxemanTemplate.png" id="5_rfpbu"]
+[ext_resource type="Texture2D" uid="uid://0siyhtpdvwca" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Ranged/MageTemplate.png" id="6_k7iho"]
+[ext_resource type="Texture2D" uid="uid://dfs6g7e4jwy22" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Melee/AssasinTemplate.png" id="7_yhmjb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4yi7q"]
+bg_color = Color(0.458824, 0.458824, 0.458824, 0.470588)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8n3o"]
+atlas = ExtResource("2_0687w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi8hx"]
+atlas = ExtResource("3_ft1b1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s28i"]
+atlas = ExtResource("4_fkm4h")
+region = Rect2(8, 1, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsv0f"]
+atlas = ExtResource("5_rfpbu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gb8g"]
+atlas = ExtResource("6_k7iho")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k36t6"]
+atlas = ExtResource("7_yhmjb")
+region = Rect2(0, 0, 16, 16)
+
+[node name="PreBattleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 1.0
+script = ExtResource("1_vh55r")
+
+[node name="SelectUnit" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="SelectUnit"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 480.0
+offset_right = 1151.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4yi7q")
+
+[node name="Units" type="HBoxContainer" parent="SelectUnit"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 512.0
+offset_right = 343.0
+offset_bottom = 544.0
+scale = Vector2(3, 3)
+theme_override_constants/separation = 20
+
+[node name="Warrior" type="Button" parent="SelectUnit/Units"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = SubResource("AtlasTexture_h8n3o")
+icon_alignment = 1
+script = ExtResource("3_hd7rq")
+unit_id = "warrior"
+
+[node name="Archer" type="Button" parent="SelectUnit/Units"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = SubResource("AtlasTexture_pi8hx")
+icon_alignment = 1
+script = ExtResource("3_hd7rq")
+unit_id = "archer"
+
+[node name="Knight" type="Button" parent="SelectUnit/Units"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = SubResource("AtlasTexture_1s28i")
+icon_alignment = 1
+script = ExtResource("3_hd7rq")
+unit_id = "knight"
+
+[node name="Tank" type="Button" parent="SelectUnit/Units"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = SubResource("AtlasTexture_bsv0f")
+icon_alignment = 1
+script = ExtResource("3_hd7rq")
+unit_id = "tank"
+
+[node name="Mage" type="Button" parent="SelectUnit/Units"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = SubResource("AtlasTexture_7gb8g")
+icon_alignment = 1
+script = ExtResource("3_hd7rq")
+unit_id = "mage"
+
+[node name="Rogue" type="Button" parent="SelectUnit/Units"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+icon = SubResource("AtlasTexture_k36t6")
+icon_alignment = 1
+script = ExtResource("3_hd7rq")
+unit_id = "rogue"
+
+[node name="Clear" type="Button" parent="SelectUnit"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 536.0
+offset_right = 1111.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 24
+text = "Clear"
+
+[node name="Return" type="Button" parent="SelectUnit"]
+layout_mode = 0
+offset_left = 991.0
+offset_top = 592.0
+offset_right = 1111.0
+offset_bottom = 624.0
+theme_override_font_sizes/font_size = 24
+text = "Return"
+
+[node name="Label" type="Label" parent="SelectUnit"]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 496.0
+offset_right = 1093.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 24
+text = "0 / 6"
+
+[node name="OptionMenu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 64.0
+offset_right = 272.0
+offset_bottom = 284.0
+theme_override_constants/separation = 24
+
+[node name="Select" type="Button" parent="OptionMenu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Select Units
+"
+
+[node name="Map" type="Button" parent="OptionMenu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "View Map"
+
+[node name="Option" type="Button" parent="OptionMenu"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "Options"
+
+[node name="Start" type="Button" parent="OptionMenu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[node name="ReturnView" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 991.0
+offset_top = 576.0
+offset_right = 1111.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 24
+text = "Return"
+
+[connection signal="unit_button_press" from="." to="." method="_on_unit_button_press"]
+[connection signal="button_down" from="SelectUnit/Units/Warrior" to="SelectUnit/Units/Warrior" method="_on_button_down"]
+[connection signal="button_down" from="SelectUnit/Units/Archer" to="SelectUnit/Units/Archer" method="_on_button_down"]
+[connection signal="button_down" from="SelectUnit/Units/Knight" to="SelectUnit/Units/Knight" method="_on_button_down"]
+[connection signal="button_down" from="SelectUnit/Units/Tank" to="SelectUnit/Units/Tank" method="_on_button_down"]
+[connection signal="button_down" from="SelectUnit/Units/Mage" to="SelectUnit/Units/Mage" method="_on_button_down"]
+[connection signal="button_down" from="SelectUnit/Units/Rogue" to="SelectUnit/Units/Rogue" method="_on_button_down"]
+[connection signal="button_down" from="SelectUnit/Clear" to="." method="clear_units"]
+[connection signal="button_down" from="SelectUnit/Return" to="." method="return_select"]
+[connection signal="button_down" from="OptionMenu/Select" to="." method="select_units"]
+[connection signal="button_down" from="OptionMenu/Map" to="." method="view_map"]
+[connection signal="button_down" from="OptionMenu/Start" to="." method="start_game"]
+[connection signal="button_down" from="ReturnView" to="." method="return_view"]

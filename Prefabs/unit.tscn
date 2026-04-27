@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6mnk4rmp84ay"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit.gd" id="1_uwiln"]
+[ext_resource type="Texture2D" uid="uid://cb6hneo0dgg0c" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Melee/SwordsmanTemplate.png" id="2_cpsqv"]
+[ext_resource type="Texture2D" uid="uid://uruwyisfwq0h" path="res://Assets/Sprites/UI/bar_background.png" id="3_kk513"]
+[ext_resource type="Texture2D" uid="uid://bwffahuo3o3bp" path="res://Assets/Sprites/UI/bar_progress.png" id="4_q7mbv"]
+[ext_resource type="Texture2D" uid="uid://drt1pl23vsm1j" path="res://Assets/Sprites/HexTiles/Overlay.png" id="5_fr7xc"]
+[ext_resource type="Script" path="res://Scripts/Game/overlay.gd" id="6_xr37y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk0ea"]
+atlas = ExtResource("2_cpsqv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1848"]
+atlas = ExtResource("2_cpsqv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qdy2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk0ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1848")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7qbw4"]
+texture = ExtResource("5_fr7xc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -3)
+0:0/0/modulate = Color(1, 1, 1, 0.313726)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, -3)
+0:1/0/modulate = Color(1, 1, 1, 0.470588)
+
+[sub_resource type="TileSet" id="TileSet_ae8g8"]
+tile_shape = 3
+tile_layout = 5
+tile_size = Vector2i(32, 22)
+navigation_layer_0/layers = 1
+custom_data_layer_0/name = "weight"
+custom_data_layer_0/type = 3
+sources/0 = SubResource("TileSetAtlasSource_7qbw4")
+
+[node name="Unit" type="Node2D"]
+z_index = 3
+script = ExtResource("1_uwiln")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qdy2j")
+autoplay = "default"
+speed_scale = 0.5
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -8.0
+offset_right = 32.0
+offset_bottom = 40.0
+texture_under = ExtResource("3_kk513")
+texture_progress = ExtResource("4_q7mbv")
+
+[node name="DangerZone" type="TileMapLayer" parent="."]
+z_index = -2
+position = Vector2(-16, -12)
+tile_set = SubResource("TileSet_ae8g8")
+script = ExtResource("6_xr37y")

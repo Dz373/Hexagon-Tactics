@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=6 format=3 uid="uid://d1g4bg0gdwfdc"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit_resource.gd" id="1_oihll"]
+[ext_resource type="Texture2D" uid="uid://b2jfuk83rn881" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Melee/RedMelee/AxemanRed.png" id="2_v8y0u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al0i8"]
+atlas = ExtResource("2_v8y0u")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u26h3"]
+atlas = ExtResource("2_v8y0u")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bodli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al0i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u26h3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_oihll")
+id = "tank"
+texture = SubResource("SpriteFrames_bodli")

@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bfwitl61ctup"]
+
+[ext_resource type="Texture2D" uid="uid://xjkai5vjvnqj" path="res://Assets/Sprites/UI/UI.png" id="1_ukuxg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k00ad"]
+atlas = ExtResource("1_ukuxg")
+region = Rect2(417, 65, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s46p5"]
+texture = SubResource("AtlasTexture_k00ad")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[resource]
+Button/constants/outline_size = 4
+Button/styles/hover = SubResource("StyleBoxTexture_s46p5")
+VBoxContainer/constants/separation = 5

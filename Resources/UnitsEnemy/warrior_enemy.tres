@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=6 format=3 uid="uid://ql6pjgenc5pc"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit_resource.gd" id="1_rew28"]
+[ext_resource type="Texture2D" uid="uid://17afdw26q08q" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Melee/RedMelee/SpearmanRed.png" id="2_qyh52"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgm7g"]
+atlas = ExtResource("2_qyh52")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7okfq"]
+atlas = ExtResource("2_qyh52")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4u8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgm7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7okfq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("1_rew28")
+id = "warrior"
+texture = SubResource("SpriteFrames_m4u8k")

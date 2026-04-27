@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=6 format=3 uid="uid://1w830a3pwsni"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit_resource.gd" id="1_m6y4g"]
+[ext_resource type="Texture2D" uid="uid://dpwckkh35emdg" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Ranged/BowmanTemplate.png" id="2_75wtb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h77m7"]
+atlas = ExtResource("2_75wtb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmpwt"]
+atlas = ExtResource("2_75wtb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j02ed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h77m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmpwt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("1_m6y4g")
+id = "archer"
+texture = SubResource("SpriteFrames_j02ed")

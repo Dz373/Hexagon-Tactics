@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=6 format=3 uid="uid://byb1fv3eprhtg"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit_resource.gd" id="1_vcjrr"]
+[ext_resource type="Texture2D" uid="uid://bmhfnwlqk5v2e" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Mounted/CyanKnight.png" id="2_w5pwm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4fsu"]
+atlas = ExtResource("2_w5pwm")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_358q4"]
+atlas = ExtResource("2_w5pwm")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba7ov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4fsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_358q4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("1_vcjrr")
+id = "knight"
+texture = SubResource("SpriteFrames_ba7ov")

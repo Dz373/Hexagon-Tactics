@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmy8c8pc6jbje"]
+
+[ext_resource type="Script" path="res://Scripts/Game/cursor.gd" id="1_buwn4"]
+[ext_resource type="Texture2D" uid="uid://drt1pl23vsm1j" path="res://Assets/Sprites/HexTiles/Overlay.png" id="2_7itld"]
+
+[node name="Cursor" type="Node2D"]
+z_index = 5
+position = Vector2(296, 168)
+script = ExtResource("1_buwn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.490196)
+texture = ExtResource("2_7itld")
+offset = Vector2(0, 3)
+vframes = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+enabled = false
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.8
+drag_top_margin = 0.8
+drag_right_margin = 0.8
+drag_bottom_margin = 0.8

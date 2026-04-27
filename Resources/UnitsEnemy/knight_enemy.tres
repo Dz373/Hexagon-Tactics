@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="UnitResource" load_steps=6 format=3 uid="uid://buxlp8b5xlxpi"]
+
+[ext_resource type="Script" path="res://Scripts/Units/unit_resource.gd" id="1_y2u20"]
+[ext_resource type="Texture2D" uid="uid://edkllemf5bpf" path="res://Assets/Sprites/MiniWorldSprites/Characters/Soldiers/Mounted/RedKnight.png" id="2_sn0ea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy1ho"]
+atlas = ExtResource("2_sn0ea")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5lvw"]
+atlas = ExtResource("2_sn0ea")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ba7ov"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy1ho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5lvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[resource]
+script = ExtResource("1_y2u20")
+id = "knight"
+texture = SubResource("SpriteFrames_ba7ov")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://vlskirmckbj5"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/action_menu.gd" id="1_8vawj"]
+[ext_resource type="Texture2D" uid="uid://xjkai5vjvnqj" path="res://Assets/Sprites/UI/UI.png" id="2_cowua"]
+[ext_resource type="Script" path="res://Scripts/Menu/action_button.gd" id="2_eqg3b"]
+[ext_resource type="Theme" uid="uid://bfwitl61ctup" path="res://Assets/Themes/action_menu_theme.tres" id="2_qis25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcjqa"]
+atlas = ExtResource("2_cowua")
+region = Rect2(416, 16, 48, 48)
+
+[node name="ActionMenu" type="MarginContainer"]
+offset_right = 58.0
+offset_bottom = 36.0
+theme = ExtResource("2_qis25")
+script = ExtResource("1_8vawj")
+
+[node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qcjqa")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="Btn" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Attack" type="Button" parent="MarginContainer/Btn"]
+layout_mode = 2
+theme = ExtResource("2_qis25")
+text = "Attack"
+script = ExtResource("2_eqg3b")
+
+[node name="Skill" type="Button" parent="MarginContainer/Btn"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_qis25")
+disabled = true
+text = "Skill"
+script = ExtResource("2_eqg3b")
+
+[node name="Item" type="Button" parent="MarginContainer/Btn"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_qis25")
+disabled = true
+text = "Item"
+script = ExtResource("2_eqg3b")
+
+[node name="Wait" type="Button" parent="MarginContainer/Btn"]
+layout_mode = 2
+theme = ExtResource("2_qis25")
+text = "Wait"
+script = ExtResource("2_eqg3b")
+
+[connection signal="button_down" from="MarginContainer/Btn/Attack" to="MarginContainer/Btn/Attack" method="_on_button_down"]
+[connection signal="button_press" from="MarginContainer/Btn/Attack" to="." method="_on_action_button_press"]
+[connection signal="button_down" from="MarginContainer/Btn/Skill" to="MarginContainer/Btn/Skill" method="_on_button_down"]
+[connection signal="button_press" from="MarginContainer/Btn/Skill" to="." method="_on_action_button_press"]
+[connection signal="button_down" from="MarginContainer/Btn/Item" to="MarginContainer/Btn/Item" method="_on_button_down"]
+[connection signal="button_press" from="MarginContainer/Btn/Item" to="." method="_on_action_button_press"]
+[connection signal="button_down" from="MarginContainer/Btn/Wait" to="MarginContainer/Btn/Wait" method="_on_button_down"]
+[connection signal="button_press" from="MarginContainer/Btn/Wait" to="." method="_on_action_button_press"]
